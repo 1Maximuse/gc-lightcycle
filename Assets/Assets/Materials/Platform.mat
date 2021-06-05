@@ -23,7 +23,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 08ca28323184d8c40983f9c5473ef722, type: 3}
-        m_Scale: {x: 6, y: 6}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 83a7cb3cb9d41cd4ab69bb2e7363900f, type: 3}
@@ -35,7 +35,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 08ca28323184d8c40983f9c5473ef722, type: 3}
-        m_Scale: {x: 6, y: 6}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -74,7 +74,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.17593439, g: 1.780042, b: 1.9766746, a: 1}
+    - _EmissionColor: {r: 0.116073415, g: 1.1743898, b: 1.3041189, a: 1}
     - _SpecColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
 --- !u!114 &5962398596296372164
 MonoBehaviour:

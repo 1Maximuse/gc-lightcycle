@@ -34,12 +34,10 @@ public class PlayerAgent : Agent
         Vector3 force = Vector3.zero;
         Vector3 rotateDir = Vector3.zero;
 
-        Debug.Log(act[0] + ", " + act[1]);
-
         float forwardSpeed = Vector3.Dot(rigidBody.velocity, transform.forward);
         if (act[0] == 1 && forwardSpeed < maxSpeed) // Accelerate
             rigidBody.AddForce(transform.forward * accelerateSpeed, ForceMode.Force);
-        else if (act[0] == 2 && forwardSpeed > -maxSpeed / 2) // Brake
+        else if (act[0] == 2 && forwardSpeed > 0) // Brake
             rigidBody.AddForce(-transform.forward * brakeSpeed, ForceMode.Force);
 
         if (act[1] == 1) // Left

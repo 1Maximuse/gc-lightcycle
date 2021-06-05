@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class TrailGenerator : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject wallPrefab;
+    [SerializeField]
+    private float threshold;
+
+    private Vector3 initialScale;
     private Vector3 prevPos;
 
     void Start()
     {
+        initialScale = wallPrefab.transform.localScale;
         prevPos = transform.position;
-        InvokeRepeating("CalculateDistance", 0, 0.1f);
+        InvokeRepeating("CalculateDistance", 0, 0.01f);
     }
 
     void CalculateDistance()
     {
-        Vector3 currentPos = transform.position;
+        Vector3 currentPos = transform.position - 3 * transform.forward;
 
-        Debug.Log((currentPos - prevPos).sqrMagnitude);
+        Vector3 delta = currentPos - prevPos;
+        float distance = delta.magnitude;
+        if (distance > threshold)
+        {
+            GameObject wall = Instantiate(wallPrefab, transform.position - 6 * transform.forward, Quaternion.LookRotation(delta));
+            wall.transform.localScale = new Vector3(initialScale.x, initialScale.y, distance + 0.05f);
+        }
 
         prevPos = currentPos;
     }
