@@ -18,12 +18,17 @@ public class PlayerAgent : Agent
     private float tiltAmount;
     [SerializeField]
     private Transform model;
+    [SerializeField]
+    private GameObject crashPrefab;
+    [SerializeField]
+    private Transform groundPlane;
 
     private Rigidbody rigidBody;
 
     public override void Initialize()
     {
         rigidBody = GetComponent<Rigidbody>();
+        // crashPrefab.GetComponent<ParticleSystem>().collision.SetPlane(1, groundPlane);
     }
 
     // private float agentRunSpeed = 2f;
@@ -61,5 +66,13 @@ public class PlayerAgent : Agent
         rigidBody.AddForce(-transform.right * sidewaysSpeed, ForceMode.Force);
 
         model.localRotation = Quaternion.Euler(0, 0, -rotateSpeed * forwardSpeed * tiltAmount);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.gameObject.CompareTag("Ground"))
+        {
+            Instantiate(crashPrefab, transform.position, transform.rotation);
+        }
     }
 }
