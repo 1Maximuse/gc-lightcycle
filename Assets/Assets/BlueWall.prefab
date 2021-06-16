@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0b228bcabd620641b7145ef8c25ff12, type: 2}
+  - {fileID: 2100000, guid: 85153fef9052d284683af5cb7993c8a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,8 +105,8 @@ GameObject:
   - component: {fileID: 2768997434024641952}
   - component: {fileID: 6883600359653836808}
   m_Layer: 0
-  m_Name: Wall
-  m_TagString: Yellow
+  m_Name: BlueWall
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ba89c6450e59d6d4a84bc01e2af8e468, type: 2}
+  - {fileID: 2100000, guid: e65afa7673127a14a9b4646c56fcd5b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

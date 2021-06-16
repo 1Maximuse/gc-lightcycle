@@ -5,6 +5,8 @@ using UnityEngine;
 public class TrailGenerator : MonoBehaviour
 {
     [SerializeField]
+    private string tag;
+    [SerializeField]
     private GameObject wallPrefab;
     [SerializeField]
     private float threshold;
@@ -12,7 +14,7 @@ public class TrailGenerator : MonoBehaviour
     private Vector3 initialScale;
     private Vector3 prevPos;
 
-    void Start()
+    public void onRestart()
     {
         initialScale = wallPrefab.transform.localScale;
         prevPos = transform.position;
@@ -28,9 +30,9 @@ public class TrailGenerator : MonoBehaviour
         if (distance > threshold)
         {
             GameObject wall = Instantiate(wallPrefab, transform.position - 6 * transform.forward, Quaternion.LookRotation(delta));
+            wall.tag = tag;
             wall.transform.localScale = new Vector3(initialScale.x, initialScale.y, distance + 0.05f);
         }
-
         prevPos = currentPos;
     }
 }
