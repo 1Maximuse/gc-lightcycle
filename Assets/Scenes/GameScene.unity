@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 253658625}
   - component: {fileID: 253658630}
   - component: {fileID: 253658631}
+  - component: {fileID: 253658632}
   m_Layer: 0
   m_Name: Lightcycle
   m_TagString: Yellow
@@ -195,7 +196,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: Lightcycle
   TeamId: 0
   m_UseChildSensors: 1
@@ -277,6 +278,34 @@ MonoBehaviour:
   wallPrefab: {fileID: 2713356283606305929, guid: 544b9e953510594448ccd99e9f80de1d,
     type: 3}
   threshold: 0.1
+--- !u!114 &253658632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253658624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Blue
+  - Yellow
+  m_RaysPerDirection: 3
+  m_MaxRayDegrees: 70
+  m_SphereCastRadius: 0.5
+  m_RayLength: 200
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 1
+  m_EndVerticalOffset: 1
 --- !u!1001 &363358747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,6 +347,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlueLightcycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887594925203818659, guid: e0f0fdbdd04f67b498b4a05c05500ce1,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 204a2894a15f0fe42a301f69a933bcb1,
+        type: 3}
+    - target: {fileID: 2887594925203818659, guid: e0f0fdbdd04f67b498b4a05c05500ce1,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2887594925203818659, guid: e0f0fdbdd04f67b498b4a05c05500ce1,
         type: 3}
