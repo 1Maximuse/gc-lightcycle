@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Environment : MonoBehaviour
 {
     [SerializeField]
+    private bool autoRestart;
+    [SerializeField]
     private PlayerAgent[] yellowAgents;
     [SerializeField]
     private PlayerAgent[] blueAgents;
@@ -37,7 +39,8 @@ public class Environment : MonoBehaviour
         yellowAlive = yellowAgents.Length;
         blueAlive = blueAgents.Length;
 
-        SceneManager.LoadScene(winner == "yellow" ? 2 : 3);
+        if (!autoRestart)
+            SceneManager.LoadScene(winner == "yellow" ? 2 : 3);
     }
 
     public void addBlueReward()

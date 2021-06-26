@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbc9ed3feb3a914e9d2d4aaaf020933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoRestart: 1
   yellowAgents:
   - {fileID: 253658625}
   blueAgents:
