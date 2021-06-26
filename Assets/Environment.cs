@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Environment : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Environment : MonoBehaviour
         yellowAlive = yellowAgents.Length;
         blueAlive = blueAgents.Length;
     }
-    public void endAll()
+    public void endAll(string winner)
     {
         foreach (PlayerAgent agents in yellowAgents)
         {
@@ -35,6 +36,8 @@ public class Environment : MonoBehaviour
         }
         yellowAlive = yellowAgents.Length;
         blueAlive = blueAgents.Length;
+
+        SceneManager.LoadScene(winner == "yellow" ? 2 : 3);
     }
 
     public void addBlueReward()
@@ -62,7 +65,7 @@ public class Environment : MonoBehaviour
             {
                 agents.AddReward(+1000f);
             }
-            endAll();
+            endAll("blue");
         }
     }
     public void blueCrash()
@@ -74,7 +77,7 @@ public class Environment : MonoBehaviour
             {
                 agents.AddReward(+1000f);
             }
-            endAll();
+            endAll("yellow");
         }
     }
 }
