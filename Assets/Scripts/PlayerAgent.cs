@@ -17,6 +17,8 @@ public class PlayerAgent : Agent
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
+    private float minSpeed;
+    [SerializeField]
     private float tiltAmount;
     [SerializeField]
     private Transform model;
@@ -72,13 +74,18 @@ public class PlayerAgent : Agent
         float forwardSpeed = Vector3.Dot(rigidBody.velocity, transform.forward);
         if (act[0] == 1 && forwardSpeed < maxSpeed) // Accelerate
             rigidBody.AddForce(transform.forward * accelerateSpeed, ForceMode.Force);
-        else if (act[0] == 2 && forwardSpeed > 0) // Brake
+        else if (act[0] == 2 && forwardSpeed > minSpeed) // Brake
             rigidBody.AddForce(-transform.forward * brakeSpeed, ForceMode.Force);
 
         if (act[1] == 1) // Left
             rigidBody.AddTorque(transform.up * -turnSpeed);
         else if (act[1] == 2) // Right
             rigidBody.AddTorque(transform.up * turnSpeed);
+
+        if (gameObject.name == "BlueLightcycle")
+        {
+            Debug.Log(actions.DiscreteActions[0] + " " + actions.DiscreteActions[1]);
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

@@ -12,7 +12,6 @@ public class UIController : MonoBehaviour
 
     public void mainMenu()
     {
-        Debug.Log("masok");
         SceneManager.LoadScene(0);
     }
 }

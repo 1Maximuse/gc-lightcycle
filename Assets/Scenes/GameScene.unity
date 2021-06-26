@@ -166,6 +166,7 @@ MonoBehaviour:
   brakeSpeed: 200
   turnSpeed: 65
   maxSpeed: 40
+  minSpeed: 5
   tiltAmount: 0.22
   model: {fileID: 1357683492}
   crashPrefab: {fileID: 2760430808491676235, guid: 494b959c5124aad47903cdc005f31a5b,
@@ -320,6 +321,11 @@ PrefabInstance:
       objectReference: {fileID: 253658629}
     - target: {fileID: 2887594925203818656, guid: e0f0fdbdd04f67b498b4a05c05500ce1,
         type: 3}
+      propertyPath: minSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887594925203818656, guid: e0f0fdbdd04f67b498b4a05c05500ce1,
+        type: 3}
       propertyPath: environment
       value: 
       objectReference: {fileID: 1893803092}
@@ -418,6 +424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887594925203818662, guid: e0f0fdbdd04f67b498b4a05c05500ce1,
+        type: 3}
+      propertyPath: threshold
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f0fdbdd04f67b498b4a05c05500ce1, type: 3}
