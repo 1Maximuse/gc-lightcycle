@@ -1,0 +1,47 @@
+{
+    "Lightcycle": {
+        "checkpoints": [
+            {
+                "steps": 393120,
+                "file_path": "results\\RandomPosition\\Lightcycle\\Lightcycle-393120.onnx",
+                "reward": null,
+                "creation_time": 1624770779.7510295,
+                "auxillary_file_paths": [
+                    "results\\RandomPosition\\Lightcycle\\Lightcycle-393120.pt"
+                ]
+            },
+            {
+                "steps": 394016,
+                "file_path": "results\\RandomPosition\\Lightcycle\\Lightcycle-394016.onnx",
+                "reward": null,
+                "creation_time": 1624770799.77744,
+                "auxillary_file_paths": [
+                    "results\\RandomPosition\\Lightcycle\\Lightcycle-394016.pt"
+                ]
+            },
+            {
+                "steps": 396704,
+                "file_path": "results\\RandomPosition\\Lightcycle\\Lightcycle-396704.onnx",
+                "reward": null,
+                "creation_time": 1624771472.1348453,
+                "auxillary_file_paths": [
+                    "results\\RandomPosition\\Lightcycle\\Lightcycle-396704.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 396704,
+            "file_path": "results\\RandomPosition\\Lightcycle.onnx",
+            "reward": null,
+            "creation_time": 1624771472.1348453,
+            "auxillary_file_paths": [
+                "results\\RandomPosition\\Lightcycle\\Lightcycle-396704.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.0+cu111"
+    }
+}

@@ -89,6 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -115,6 +116,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2887594925203818657
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 0
+    VectorObservationSize: 3
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -207,7 +209,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: Lightcycle
   TeamId: 0
   m_UseChildSensors: 1
@@ -228,16 +230,18 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 1000
   accelerateSpeed: 100
   brakeSpeed: 200
   turnSpeed: 65
   maxSpeed: 40
+  minSpeed: 10
   tiltAmount: 0.22
   model: {fileID: 3429619983879783273}
   crashPrefab: {fileID: 2760430808491676235, guid: 494b959c5124aad47903cdc005f31a5b,
     type: 3}
   environment: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!114 &2887594925203818663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +271,7 @@ MonoBehaviour:
   tag: Blue
   wallPrefab: {fileID: 2713356283606305929, guid: 9d2526d540fc9ac4db40339c896e8074,
     type: 3}
-  threshold: 0.02
+  threshold: 0.1
 --- !u!114 &8038741797582465056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,22 +284,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SensorName: RayPerceptionSensor
-  m_DetectableTags:
-  - Blue
-  - Yellow
-  m_RaysPerDirection: 3
-  m_MaxRayDegrees: 70
-  m_SphereCastRadius: 0.5
-  m_RayLength: 200
+  m_SensorName: 
+  m_DetectableTags: []
+  m_RaysPerDirection: 0
+  m_MaxRayDegrees: 0
+  m_SphereCastRadius: 0
+  m_RayLength: 0
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 1
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 1
-  m_EndVerticalOffset: 1
+    m_Bits: 0
+  m_ObservationStacks: 0
+  rayHitColor: {r: 0, g: 0, b: 0, a: 0}
+  rayMissColor: {r: 0, g: 0, b: 0, a: 0}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &4360651677491638200
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +353,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -378,6 +381,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6125137313921058462
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +437,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -460,6 +465,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6371555060826479477
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +521,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -542,6 +549,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &2887594927145125553
 PrefabInstance:
   m_ObjectHideFlags: 0

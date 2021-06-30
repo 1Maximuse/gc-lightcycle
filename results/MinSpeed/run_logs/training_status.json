@@ -1,0 +1,47 @@
+{
+    "Lightcycle": {
+        "checkpoints": [
+            {
+                "steps": 103130,
+                "file_path": "results\\MinSpeed\\Lightcycle\\Lightcycle-103130.onnx",
+                "reward": 60.0,
+                "creation_time": 1624710936.373666,
+                "auxillary_file_paths": [
+                    "results\\MinSpeed\\Lightcycle\\Lightcycle-103130.pt"
+                ]
+            },
+            {
+                "steps": 193324,
+                "file_path": "results\\MinSpeed\\Lightcycle\\Lightcycle-193324.onnx",
+                "reward": 277.5652173913044,
+                "creation_time": 1624766893.425195,
+                "auxillary_file_paths": [
+                    "results\\MinSpeed\\Lightcycle\\Lightcycle-193324.pt"
+                ]
+            },
+            {
+                "steps": 198308,
+                "file_path": "results\\MinSpeed\\Lightcycle\\Lightcycle-198308.onnx",
+                "reward": 267.57142857142856,
+                "creation_time": 1624767278.0404868,
+                "auxillary_file_paths": [
+                    "results\\MinSpeed\\Lightcycle\\Lightcycle-198308.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 198308,
+            "file_path": "results\\MinSpeed\\Lightcycle.onnx",
+            "reward": 267.57142857142856,
+            "creation_time": 1624767278.0404868,
+            "auxillary_file_paths": [
+                "results\\MinSpeed\\Lightcycle\\Lightcycle-198308.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.0+cu111"
+    }
+}

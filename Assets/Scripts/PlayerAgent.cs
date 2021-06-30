@@ -38,25 +38,30 @@ public class PlayerAgent : Agent
 
     void Awake()
     {
+        rigidBody = GetComponent<Rigidbody>();
         initialLocalPosition = transform.localPosition;
         initialRotation = transform.rotation;
     }
 
-    public override void Initialize()
-    {
-        rigidBody = GetComponent<Rigidbody>();
-    }
-
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform.localPosition);
-        sensor.AddObservation(enemy.localPosition);
+        sensor.AddObservation(transform.rotation * (enemy.position - transform.position));
     }
 
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = initialLocalPosition;
-        transform.rotation = initialRotation;
+        if (environment.isTraining)
+        {
+            float spawnRadius = 200f;
+            Quaternion rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+            Vector3 position = rotation * -Vector3.forward * spawnRadius;
+            transform.rotation = rotation;
+            transform.localPosition = position;
+        } else
+        {
+            transform.localPosition = initialLocalPosition;
+            transform.rotation = initialRotation;
+        }
         rigidBody.velocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
         alive = true;
@@ -81,11 +86,6 @@ public class PlayerAgent : Agent
             rigidBody.AddTorque(transform.up * -turnSpeed);
         else if (act[1] == 2) // Right
             rigidBody.AddTorque(transform.up * turnSpeed);
-
-        if (gameObject.name == "BlueLightcycle")
-        {
-            Debug.Log(actions.DiscreteActions[0] + " " + actions.DiscreteActions[1]);
-        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -102,6 +102,7 @@ public class PlayerAgent : Agent
         float sidewaysSpeed = Vector3.Dot(rigidBody.velocity, transform.right);
         float rotateSpeed = rigidBody.angularVelocity.y;
         rigidBody.AddForce(-transform.right * sidewaysSpeed, ForceMode.Force);
+        rigidBody.AddForce(transform.forward * Mathf.Max(0, minSpeed - forwardSpeed), ForceMode.Force);
 
         model.localRotation = Quaternion.Euler(0, 0, -rotateSpeed * forwardSpeed * tiltAmount);
     }
@@ -116,30 +117,32 @@ public class PlayerAgent : Agent
         if (gameObject.CompareTag(collision.gameObject.tag))
         {
             AddReward(-1000f);
-            if (collision.gameObject.CompareTag("Yellow"))
+            if (gameObject.CompareTag("Yellow"))
             {
                 environment.yellowCrash();
             } 
-            else if (collision.gameObject.CompareTag("Blue"))
+            else if (gameObject.CompareTag("Blue"))
             {
                 environment.blueCrash();
             }
         }
         else
         {
-            AddReward(-500f);
             if (collision.gameObject.CompareTag("Yellow"))
             {
+                AddReward(-500f);
                 environment.addYellowReward();
                 environment.blueCrash();
             }
             else if (collision.gameObject.CompareTag("Blue"))
             {
+                AddReward(-500f);
                 environment.addBlueReward();
                 environment.yellowCrash();
             }
             else
             {
+                // Wall
                 if (gameObject.CompareTag("Yellow"))
                 {
                     environment.yellowCrash();

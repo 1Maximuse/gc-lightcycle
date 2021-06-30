@@ -1,0 +1,38 @@
+{
+    "Lightcycle": {
+        "checkpoints": [
+            {
+                "steps": 12746,
+                "file_path": "results\\Training2\\Lightcycle\\Lightcycle-12746.onnx",
+                "reward": 199.16666666666666,
+                "creation_time": 1624694294.6815178,
+                "auxillary_file_paths": [
+                    "results\\Training2\\Lightcycle\\Lightcycle-12746.pt"
+                ]
+            },
+            {
+                "steps": 380612,
+                "file_path": "results\\Training2\\Lightcycle\\Lightcycle-380612.onnx",
+                "reward": 379.3333333333333,
+                "creation_time": 1624707463.0569932,
+                "auxillary_file_paths": [
+                    "results\\Training2\\Lightcycle\\Lightcycle-380612.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 380612,
+            "file_path": "results\\Training2\\Lightcycle.onnx",
+            "reward": 379.3333333333333,
+            "creation_time": 1624707463.0569932,
+            "auxillary_file_paths": [
+                "results\\Training2\\Lightcycle\\Lightcycle-380612.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.0+cu111"
+    }
+}
