@@ -104,7 +104,7 @@ public class PlayerAgent : Agent
         float forwardSpeed = Vector3.Dot(rigidBody.velocity, transform.forward);
         float sidewaysSpeed = Vector3.Dot(rigidBody.velocity, transform.right);
         float rotateSpeed = rigidBody.angularVelocity.y;
-        rigidBody.AddForce(-transform.right * sidewaysSpeed, ForceMode.Force);
+        rigidBody.AddForce(-transform.right * sidewaysSpeed * 4f, ForceMode.Force);
         rigidBody.AddForce(transform.forward * Mathf.Max(0, minSpeed - forwardSpeed), ForceMode.Force);
 
         model.localRotation = Quaternion.Euler(0, 0, -rotateSpeed * forwardSpeed * tiltAmount);

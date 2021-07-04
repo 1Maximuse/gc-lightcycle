@@ -1,0 +1,29 @@
+{
+    "Lightcycle": {
+        "checkpoints": [
+            {
+                "steps": 47990,
+                "file_path": "results\\Raycasted\\Lightcycle\\Lightcycle-47990.onnx",
+                "reward": 756.8518518518518,
+                "creation_time": 1625378297.6460154,
+                "auxillary_file_paths": [
+                    "results\\Raycasted\\Lightcycle\\Lightcycle-47990.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 47990,
+            "file_path": "results\\Raycasted\\Lightcycle.onnx",
+            "reward": 756.8518518518518,
+            "creation_time": 1625378297.6460154,
+            "auxillary_file_paths": [
+                "results\\Raycasted\\Lightcycle\\Lightcycle-47990.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.0+cu111"
+    }
+}

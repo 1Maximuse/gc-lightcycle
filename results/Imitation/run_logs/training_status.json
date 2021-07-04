@@ -1,0 +1,29 @@
+{
+    "Lightcycle": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\Imitation\\Lightcycle\\Lightcycle-0.onnx",
+                "reward": null,
+                "creation_time": 1625374962.6331966,
+                "auxillary_file_paths": [
+                    "results\\Imitation\\Lightcycle\\Lightcycle-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\Imitation\\Lightcycle.onnx",
+            "reward": null,
+            "creation_time": 1625374962.6331966,
+            "auxillary_file_paths": [
+                "results\\Imitation\\Lightcycle\\Lightcycle-0.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.0+cu111"
+    }
+}
