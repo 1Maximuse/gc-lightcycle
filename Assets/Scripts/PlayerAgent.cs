@@ -5,6 +5,7 @@ using Unity.MLAgents.Actuators;
 using UnityEngine;
 using System.Linq;
 using Unity.MLAgents.Sensors;
+using UnityEngine.Audio;
 
 public class PlayerAgent : Agent
 {
@@ -28,6 +29,8 @@ public class PlayerAgent : Agent
     private Environment environment;
     [SerializeField]
     private Transform enemy;
+    [SerializeField]
+    private AudioMixer audioMixer;
 
     private Rigidbody rigidBody;
 
@@ -105,6 +108,17 @@ public class PlayerAgent : Agent
         rigidBody.AddForce(transform.forward * Mathf.Max(0, minSpeed - forwardSpeed), ForceMode.Force);
 
         model.localRotation = Quaternion.Euler(0, 0, -rotateSpeed * forwardSpeed * tiltAmount);
+        float inverseLerp = Mathf.InverseLerp(minSpeed, maxSpeed, forwardSpeed);
+        if (gameObject.CompareTag("Yellow"))
+        {
+            audioMixer.SetFloat("AccelerationPitch", Mathf.Lerp(0.5f, 1.5f, inverseLerp));
+            audioMixer.SetFloat("AccelerationVolume", Mathf.Lerp(-40f, -20f, inverseLerp));
+        } else
+        {
+            audioMixer.SetFloat("BluePitch", Mathf.Lerp(0.5f, 1.5f, inverseLerp));
+            audioMixer.SetFloat("BlueVolume", Mathf.Lerp(-40f, -20f, inverseLerp));
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
