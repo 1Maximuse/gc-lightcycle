@@ -31,6 +31,8 @@ public class PlayerAgent : Agent
     private Transform enemy;
     [SerializeField]
     private AudioMixer audioMixer;
+    [SerializeField]
+    private bool remote;
 
     private Rigidbody rigidBody;
 
@@ -94,8 +96,16 @@ public class PlayerAgent : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
-        discreteActions[0] = Input.GetKey(KeyCode.W) ? 1 : (Input.GetKey(KeyCode.S) ? 2 : 0);
-        discreteActions[1] = Input.GetKey(KeyCode.A) ? 1 : (Input.GetKey(KeyCode.D) ? 2 : 0);
+        if (remote)
+        {
+            discreteActions[0] = Input.GetKey(KeyCode.I) ? 1 : (Input.GetKey(KeyCode.K) ? 2 : 0);
+            discreteActions[1] = Input.GetKey(KeyCode.J) ? 1 : (Input.GetKey(KeyCode.L) ? 2 : 0);
+        }
+        else
+        {
+            discreteActions[0] = Input.GetKey(KeyCode.W) ? 1 : (Input.GetKey(KeyCode.S) ? 2 : 0);
+            discreteActions[1] = Input.GetKey(KeyCode.A) ? 1 : (Input.GetKey(KeyCode.D) ? 2 : 0);
+        }
     }
 
     void Update()
